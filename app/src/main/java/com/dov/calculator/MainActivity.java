@@ -8,17 +8,27 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     EditText nameEditText;
     EditText passwordEditText;
     Button loginButton;
+    private MainActivityViewModel mainActivityViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Initialiser le ViewModel
+        mainActivityViewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
         setViewItems();
+        setObservers();
     }
 
     private void setViewItems() {
@@ -26,24 +36,28 @@ public class MainActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.password_edit);
         loginButton = findViewById(R.id.login_bt);
         loginButton.setOnClickListener( v -> {
-           login();
+            mainActivityViewModel.login(nameEditText.getText().toString(), passwordEditText.getText().toString());
         });
     }
 
-    private void login() {
-        String name = nameEditText.getText().toString();
-        String password = passwordEditText.getText().toString();
-
-        if (name.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
-            Log.d("login","Connexion échouée");
-            return;
-        }
-
-        Intent intent = new Intent(this, CalculatorActivity.class);
-        intent.putExtra("name", name);
-        startActivity(intent);
-        Log.d("login","Connexion réussie");
-        finish();
+    private void setObservers() {
+        // Observer le résultat de la connexion
+        mainActivityViewModel.loginSuccess.observe(this, success -> {
+            if (success) {
+                Intent intent = new Intent(MainActivity.this, Calculator.class);
+                intent.putExtra("name", nameEditText.getText().toString());
+                startActivity(intent);
+                Log.d("login", "Connexion réussie");
+                finish();
+            }
+        });
+        // Observer les messages d’erreur
+        mainActivityViewModel.errorMessage.observe(this, message -> {
+            if (message != null) {
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+                Log.d("login", "Connexion échouée");
+            }
+        });
     }
+
 }
