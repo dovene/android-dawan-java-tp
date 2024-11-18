@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener( v -> {
             mainActivityViewModel.login(nameEditText.getText().toString(), passwordEditText.getText().toString());
         });
+        findViewById(R.id.responsive_form_bt).setOnClickListener( v -> {
+           startActivity(new Intent(MainActivity.this, RichFormActivity.class));
+        });
     }
 
     private void setObservers() {

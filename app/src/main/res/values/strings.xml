@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Calculator</string>
+
+    <string name="property_title">Votre bien</string>
+    <string name="property_type">Type de bien</string>
+    <string name="surface">Surface (m²)</string>
+    <string name="construction_year">Année de construction</string>
+    <string name="price">Prix de vente (€)</string>
+    <string name="address">Adresse</string>
+    <string name="city">Ville</string>
+    <string name="furnished">Meublé</string>
+    <string name="parking">Place de parking</string>
+    <string name="house">Maison</string>
+    <string name="apartment">Appartement</string>
+
 </resources>
