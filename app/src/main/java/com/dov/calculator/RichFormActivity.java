@@ -35,6 +35,9 @@ public class RichFormActivity extends AppCompatActivity {
         } else if (item.getItemId() == R.id.action_save) {
             Toast.makeText(this, "Bien enregistré", Toast.LENGTH_SHORT).show();
             return true;
+        } else if (item.getItemId() == R.id.action_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
         } else {
             return super.onOptionsItemSelected(item);
         }

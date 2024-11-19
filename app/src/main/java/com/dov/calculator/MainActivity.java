@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.responsive_form_bt).setOnClickListener( v -> {
            startActivity(new Intent(MainActivity.this, RichFormActivity.class));
         });
+        nameEditText.setText(mainActivityViewModel.getSavedUserData().first);
+        passwordEditText.setText(mainActivityViewModel.getSavedUserData().second);
     }
 
     private void setObservers() {
