@@ -47,6 +47,10 @@ dependencies {
     //Preference
     implementation ("androidx.preference:preference:1.2.1")
 
+    //Room
+    implementation ("androidx.room:room-runtime:2.5.2")
+    annotationProcessor ("androidx.room:room-compiler:2.5.2")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

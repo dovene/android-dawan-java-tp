@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <permission
+        android:name="com.dov.calculator.READ_PERMISSION"
+        android:protectionLevel="normal"
+        android:label="Read Calculator Data" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -35,6 +40,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".AppContentProvider"
+            android:authorities="com.dov.calculator.provider"
+            android:exported="true"
+            android:readPermission="com.dov.calculator.READ_PERMISSION" />
+
     </application>
 
 </manifest>

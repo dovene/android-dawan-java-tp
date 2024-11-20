@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.dov.calculator.history.HistoryActivity;
 
@@ -18,12 +21,15 @@ public class CalculatorActivity extends AppCompatActivity {
     Button moinsButton;
     TextView titleTextView;
     Button historyButton;
+    private CalculatorViewModel calculatorViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
         setViewItems();
+        calculatorViewModel = new ViewModelProvider(this).get(CalculatorViewModel.class);
+
     }
 
     private void setViewItems() {
@@ -46,7 +52,7 @@ public class CalculatorActivity extends AppCompatActivity {
         });
 
         String name = getIntent().getStringExtra("name");
-        titleTextView.setText("Bonjour "+ name);
+        titleTextView.setText("Bonjour " + name);
     }
 
     private void calculate(char c) {
@@ -65,7 +71,18 @@ public class CalculatorActivity extends AppCompatActivity {
         String resultString = firstNumberEditText.getText().toString() + " " + c + " " + secondNumberEditText.getText().toString() + " = " + result;
         resultTextView.setText(resultString);
         ApplicationData.getInstance().getOperationsHistory().add(resultString);
-    }
+        calculatorViewModel.writeFile(this, resultString);
+        Toast.makeText(this, calculatorViewModel.readFromFile(this), Toast.LENGTH_SHORT).show();
+        calculatorViewModel.saveWithSQLDatabase(this, resultString);
+        Toast.makeText(this, calculatorViewModel.getFromSQLDatabase(this), Toast.LENGTH_SHORT).show();
+        calculatorViewModel.insertWithRoom(this, resultString);
+        calculatorViewModel.getAllResultsWithRoom(this).observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                Toast.makeText(Calculator.this, s, Toast.LENGTH_SHORT).show();
+            }
+        });
 
+    }
 
 }
