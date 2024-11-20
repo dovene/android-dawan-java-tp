@@ -72,7 +72,7 @@ public class CalculatorViewModel extends AndroidViewModel {
         Cursor cursor = db.query("calculator", null, null,
                 null, null, null, null);
         while (cursor.moveToNext()) {
-            String result = cursor.getString(cursor.getColumnIndex("result"));
+            String result = cursor.getString(cursor.getColumnIndexOrThrow("result"));
             stringBuilder.append(result).append("*sql*");
         }
         cursor.close();
