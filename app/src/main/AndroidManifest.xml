@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <permission
         android:name="com.dov.calculator.READ_PERMISSION"
         android:protectionLevel="normal"
@@ -18,9 +20,12 @@
         android:theme="@style/Theme.Calculator"
         tools:targetApi="31">
         <activity
+            android:name=".AlbumActivity"
+            android:exported="false" />
+        <activity
             android:name=".preferences.SettingsActivity"
             android:exported="false"
-            android:parentActivityName=".RichFormActivity"/>
+            android:parentActivityName=".RichFormActivity" />
         <activity
             android:name=".RichFormActivity"
             android:exported="true" >
@@ -36,7 +41,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

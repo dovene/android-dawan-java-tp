@@ -13,4 +13,7 @@
     <string name="house">Maison</string>
     <string name="apartment">Appartement</string>
 
+    <string name="photo_album">Album photo</string>
+    <string name="input_album_identifier">Entrer l\'identifiant de l\'album</string>
+    <string name="search">Rechercher</string>
 </resources>

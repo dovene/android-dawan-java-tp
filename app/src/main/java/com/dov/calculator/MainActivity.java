@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         });
         nameEditText.setText(mainActivityViewModel.getSavedUserData().first);
         passwordEditText.setText(mainActivityViewModel.getSavedUserData().second);
+        findViewById(R.id.photo_album_bt).setOnClickListener( v -> {
+            startActivity(new Intent(MainActivity.this, AlbumActivity.class));
+        });
     }
 
     private void setObservers() {
