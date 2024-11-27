@@ -1,4 +1,4 @@
-package com.dov.calculator;
+package com.dov.calculator.album;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.dov.calculator.R;
 import com.dov.calculator.webservice.AlbumApi;
 import com.dov.calculator.webservice.AlbumService;
 import com.dov.calculator.webservice.Photo;

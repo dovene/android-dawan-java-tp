@@ -20,24 +20,24 @@
         android:theme="@style/Theme.Calculator"
         tools:targetApi="31">
         <activity
-            android:name=".AlbumActivity"
+            android:name=".album.AlbumActivity"
             android:exported="false" />
         <activity
             android:name=".preferences.SettingsActivity"
             android:exported="false"
-            android:parentActivityName=".RichFormActivity" />
+            android:parentActivityName=".form.RichFormActivity" />
         <activity
-            android:name=".RichFormActivity"
+            android:name=".form.RichFormActivity"
             android:exported="true" >
         </activity>
         <activity
             android:name=".history.HistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".CalculatorActivity"
+            android:name=".calculator.CalculatorActivity"
             android:exported="false"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +46,7 @@
         </activity>
 
         <provider
-            android:name=".AppContentProvider"
+            android:name=".contentprovider.AppContentProvider"
             android:authorities="com.dov.calculator.provider"
             android:exported="true"
             android:readPermission="com.dov.calculator.READ_PERMISSION" />

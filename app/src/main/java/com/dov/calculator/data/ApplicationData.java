@@ -1,4 +1,4 @@
-package com.dov.calculator;
+package com.dov.calculator.data;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.dov.calculator;
+package com.dov.calculator.contentprovider;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

@@ -1,4 +1,4 @@
-package com.dov.calculator;
+package com.dov.calculator.form;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +8,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.dov.calculator.R;
 import com.dov.calculator.preferences.SettingsActivity;
 
 

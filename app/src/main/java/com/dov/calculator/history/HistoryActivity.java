@@ -1,14 +1,12 @@
 package com.dov.calculator.history;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dov.calculator.ApplicationData;
+import com.dov.calculator.data.ApplicationData;
 import com.dov.calculator.R;
 
 public class HistoryActivity extends AppCompatActivity {

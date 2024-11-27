@@ -1,9 +1,8 @@
-package com.dov.calculator;
+package com.dov.calculator.main;
 
 import static android.content.Context.MODE_PRIVATE;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Pair;
 

@@ -1,4 +1,4 @@
-package com.dov.calculator;
+package com.dov.calculator.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.dov.calculator.album.AlbumActivity;
+import com.dov.calculator.R;
+import com.dov.calculator.form.RichFormActivity;
+import com.dov.calculator.calculator.CalculatorActivity;
 
 public class MainActivity extends AppCompatActivity {
     EditText nameEditText;

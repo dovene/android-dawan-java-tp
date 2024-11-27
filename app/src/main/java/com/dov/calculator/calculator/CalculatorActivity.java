@@ -1,4 +1,4 @@
-package com.dov.calculator;
+package com.dov.calculator.calculator;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.dov.calculator.data.ApplicationData;
+import com.dov.calculator.R;
 import com.dov.calculator.history.HistoryActivity;
 
 public class CalculatorActivity extends AppCompatActivity {

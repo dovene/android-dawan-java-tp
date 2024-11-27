@@ -1,4 +1,4 @@
-package com.dov.calculator;
+package com.dov.calculator.calculator;
 
 import android.app.Application;
 import android.content.ContentValues;
