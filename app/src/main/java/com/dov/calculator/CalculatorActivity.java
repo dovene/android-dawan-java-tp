@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.dov.calculator.history.HistoryActivity;
 
-public class Calculator extends AppCompatActivity {
+public class CalculatorActivity extends AppCompatActivity {
     EditText firstNumberEditText;
     EditText secondNumberEditText;
     TextView resultTextView;

@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        Intent intent = new Intent(this, Calculator.class);
+        Intent intent = new Intent(this, CalculatorActivity.class);
         intent.putExtra("name", name);
         startActivity(intent);
         Log.d("login","Connexion réussie");
