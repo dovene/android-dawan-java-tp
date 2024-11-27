@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.dov.calculator.preferences.SettingsActivity;
+
 
 public class RichFormActivity extends AppCompatActivity {
 

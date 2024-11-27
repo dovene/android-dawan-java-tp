@@ -42,7 +42,9 @@ public class MainActivityViewModel extends AndroidViewModel {
 
     public Pair<String, String> getSavedUserData() {
         SharedPreferences prefs = getApplication().getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        return new Pair<>(prefs.getString("name", ""), prefs.getString("password", ""));
+        String name = prefs.getString("name", "");
+        String password = prefs.getString("password", "");
+        return new Pair<>(name, password);
     }
 
 }
