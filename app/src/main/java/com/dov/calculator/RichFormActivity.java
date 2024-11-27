@@ -9,7 +9,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.dov.calculator.preferences.SettingsActivity;
 
 public class RichFormActivity extends AppCompatActivity {
 
