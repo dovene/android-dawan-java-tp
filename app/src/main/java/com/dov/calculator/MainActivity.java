@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         // Observer le résultat de la connexion
         mainActivityViewModel.loginSuccess.observe(this, success -> {
             if (success) {
-                Intent intent = new Intent(MainActivity.this, Calculator.class);
+                Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
                 intent.putExtra("name", nameEditText.getText().toString());
                 startActivity(intent);
                 Log.d("login", "Connexion réussie");
