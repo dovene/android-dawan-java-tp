@@ -79,7 +79,7 @@ public class CalculatorActivity extends AppCompatActivity {
         calculatorViewModel.getAllResultsWithRoom(this).observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                Toast.makeText(Calculator.this, s, Toast.LENGTH_SHORT).show();
+                Toast.makeText(CalculatorActivity.this, s, Toast.LENGTH_SHORT).show();
             }
         });
 
