@@ -1,7 +1,9 @@
 package com.dov.calculator.history;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +24,7 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     private void setViewItems() {
+        findViewById(R.id.close_bt).setOnClickListener(v -> finish());
         setTitle("Historique");
         recyclerView = findViewById(R.id.history_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
