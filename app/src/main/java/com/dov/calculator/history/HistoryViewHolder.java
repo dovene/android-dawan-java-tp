@@ -24,5 +24,11 @@ public class HistoryViewHolder extends RecyclerView.ViewHolder {
         deleteImageView.setOnClickListener(v -> {
             onDeleteButtonClicked.delete(position);
         });
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onDeleteButtonClicked.displayOperation(operation);
+            }
+        });
     }
 }

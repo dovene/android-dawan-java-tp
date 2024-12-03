@@ -2,6 +2,7 @@ package com.dov.calculator.history;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,11 @@ public class HistoryActivity extends AppCompatActivity {
             public void delete(int position) {
                 ApplicationData.getInstance().getOperationsHistory().remove(position);
                 historyRecyclerViewAdapter.setOperations(ApplicationData.getInstance().getOperationsHistory());
+            }
+
+            @Override
+            public void displayOperation(String operation) {
+                Toast.makeText(HistoryActivity.this, operation, Toast.LENGTH_LONG).show();
             }
         });
         recyclerView.setAdapter(historyRecyclerViewAdapter);

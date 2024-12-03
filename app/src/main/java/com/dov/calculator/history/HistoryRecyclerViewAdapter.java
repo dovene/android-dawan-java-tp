@@ -15,6 +15,7 @@ public class HistoryRecyclerViewAdapter  extends RecyclerView.Adapter<HistoryVie
 
     public interface OnDeleteButtonClicked {
         void delete(int position);
+        void displayOperation(String operation);
     }
 
     private ArrayList<String> operations;
