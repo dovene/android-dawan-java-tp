@@ -25,7 +25,7 @@ public class HistoryActivity extends AppCompatActivity {
 
     private void setViewItems() {
         findViewById(R.id.close_bt).setOnClickListener(v -> finish());
-        setTitle("Historique");
+
         recyclerView = findViewById(R.id.history_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         historyRecyclerViewAdapter = new HistoryRecyclerViewAdapter(ApplicationData.getInstance().getOperationsHistory(), new HistoryRecyclerViewAdapter.OnDeleteButtonClicked() {
