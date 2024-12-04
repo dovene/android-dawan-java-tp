@@ -116,7 +116,7 @@ public class RichFormActivity extends AppCompatActivity {
         List<Property> properties = getProperties();
         properties.add(property);
         saveProperties(properties);
-        Toast.makeText(this, "Nombre de biens enregistrés :" + properties.size(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Nombre de biens enregistrés :" + properties.size() + " Le type du dernier bien stocké est : " + property.getType() , Toast.LENGTH_SHORT).show();
     }
 
     public void saveProperties(List<Property> properties) {
