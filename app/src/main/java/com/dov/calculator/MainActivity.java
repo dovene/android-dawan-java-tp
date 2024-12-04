@@ -1,6 +1,7 @@
 package com.dov.calculator;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -41,14 +42,16 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.responsive_form_bt).setOnClickListener( v -> {
            startActivity(new Intent(MainActivity.this, RichFormActivity.class));
         });
-        nameEditText.setText(mainActivityViewModel.getSavedUserData().first);
-        passwordEditText.setText(mainActivityViewModel.getSavedUserData().second);
+        getUserData();
+        //nameEditText.setText(mainActivityViewModel.getSavedUserData().first);
+        // passwordEditText.setText(mainActivityViewModel.getSavedUserData().second);
     }
 
     private void setObservers() {
         // Observer le résultat de la connexion
         mainActivityViewModel.loginSuccess.observe(this, success -> {
             if (success) {
+                saveUserData();
                 Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
                 intent.putExtra("name", nameEditText.getText().toString());
                 startActivity(intent);
@@ -63,6 +66,22 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("login", "Connexion échouée");
             }
         });
+    }
+
+    private void saveUserData() {
+        SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("name", nameEditText.getText().toString());
+        editor.putString("password", passwordEditText.getText().toString());
+        editor.apply();
+    }
+
+    public void getUserData() {
+        SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String name = prefs.getString("name", "");
+        String password = prefs.getString("password", "");
+        nameEditText.setText(name);
+        passwordEditText.setText(password);
     }
 
 }

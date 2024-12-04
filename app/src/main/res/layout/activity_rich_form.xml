@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/property_type">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/type_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -42,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/surface">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/surface_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal" />
@@ -53,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/construction_year">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/construction_year_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -64,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/price">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/price_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal" />
@@ -75,6 +79,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/address">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine" />
@@ -86,18 +91,21 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/city">
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/city_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Meublé -->
             <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/furnished_check"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/furnished" />
 
             <!-- Place de parking -->
             <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/parking_check"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/parking" />
@@ -106,6 +114,7 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/type_radio"
                 android:layout_marginTop="8dp">
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
